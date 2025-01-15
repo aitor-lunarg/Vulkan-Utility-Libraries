@@ -1960,6 +1960,11 @@ void *SafePnextCopy(const void *pNext, PNextCopyState* copy_state) {
             case VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_2_PROPERTIES_NV:
                 safe_pNext = new safe_VkPhysicalDeviceCooperativeMatrix2PropertiesNV(reinterpret_cast<const VkPhysicalDeviceCooperativeMatrix2PropertiesNV *>(pNext), copy_state, false);
                 break;
+#ifdef VK_USE_PLATFORM_METAL_EXT
+            case VK_STRUCTURE_TYPE_IMPORT_MEMORY_METAL_HANDLE_INFO_EXT:
+                safe_pNext = new safe_VkImportMemoryMetalHandleInfoEXT(reinterpret_cast<const VkImportMemoryMetalHandleInfoEXT *>(pNext), copy_state, false);
+                break;
+#endif  // VK_USE_PLATFORM_METAL_EXT
             case VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_ROBUSTNESS_FEATURES_EXT:
                 safe_pNext = new safe_VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT(reinterpret_cast<const VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT *>(pNext), copy_state, false);
                 break;
@@ -3939,6 +3944,11 @@ void FreePnextChain(const void *pNext) {
         case VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_2_PROPERTIES_NV:
             delete reinterpret_cast<safe_VkPhysicalDeviceCooperativeMatrix2PropertiesNV *>(header);
             break;
+#ifdef VK_USE_PLATFORM_METAL_EXT
+        case VK_STRUCTURE_TYPE_IMPORT_MEMORY_METAL_HANDLE_INFO_EXT:
+            delete reinterpret_cast<safe_VkImportMemoryMetalHandleInfoEXT *>(header);
+            break;
+#endif  // VK_USE_PLATFORM_METAL_EXT
         case VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_ROBUSTNESS_FEATURES_EXT:
             delete reinterpret_cast<safe_VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT *>(header);
             break;

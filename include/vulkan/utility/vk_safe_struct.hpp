@@ -19512,6 +19512,58 @@ struct safe_VkPhysicalDeviceCooperativeMatrix2PropertiesNV {
         return reinterpret_cast<VkPhysicalDeviceCooperativeMatrix2PropertiesNV const*>(this);
     }
 };
+#ifdef VK_USE_PLATFORM_METAL_EXT
+struct safe_VkImportMemoryMetalHandleInfoEXT {
+    VkStructureType sType;
+    const void* pNext{};
+    VkExternalMemoryHandleTypeFlagBits handleType;
+    void* handle{};
+
+    safe_VkImportMemoryMetalHandleInfoEXT(const VkImportMemoryMetalHandleInfoEXT* in_struct, PNextCopyState* copy_state = {},
+                                          bool copy_pnext = true);
+    safe_VkImportMemoryMetalHandleInfoEXT(const safe_VkImportMemoryMetalHandleInfoEXT& copy_src);
+    safe_VkImportMemoryMetalHandleInfoEXT& operator=(const safe_VkImportMemoryMetalHandleInfoEXT& copy_src);
+    safe_VkImportMemoryMetalHandleInfoEXT();
+    ~safe_VkImportMemoryMetalHandleInfoEXT();
+    void initialize(const VkImportMemoryMetalHandleInfoEXT* in_struct, PNextCopyState* copy_state = {});
+    void initialize(const safe_VkImportMemoryMetalHandleInfoEXT* copy_src, PNextCopyState* copy_state = {});
+    VkImportMemoryMetalHandleInfoEXT* ptr() { return reinterpret_cast<VkImportMemoryMetalHandleInfoEXT*>(this); }
+    VkImportMemoryMetalHandleInfoEXT const* ptr() const { return reinterpret_cast<VkImportMemoryMetalHandleInfoEXT const*>(this); }
+};
+struct safe_VkMemoryMetalHandlePropertiesEXT {
+    VkStructureType sType;
+    void* pNext{};
+    uint32_t memoryTypeBits;
+
+    safe_VkMemoryMetalHandlePropertiesEXT(const VkMemoryMetalHandlePropertiesEXT* in_struct, PNextCopyState* copy_state = {},
+                                          bool copy_pnext = true);
+    safe_VkMemoryMetalHandlePropertiesEXT(const safe_VkMemoryMetalHandlePropertiesEXT& copy_src);
+    safe_VkMemoryMetalHandlePropertiesEXT& operator=(const safe_VkMemoryMetalHandlePropertiesEXT& copy_src);
+    safe_VkMemoryMetalHandlePropertiesEXT();
+    ~safe_VkMemoryMetalHandlePropertiesEXT();
+    void initialize(const VkMemoryMetalHandlePropertiesEXT* in_struct, PNextCopyState* copy_state = {});
+    void initialize(const safe_VkMemoryMetalHandlePropertiesEXT* copy_src, PNextCopyState* copy_state = {});
+    VkMemoryMetalHandlePropertiesEXT* ptr() { return reinterpret_cast<VkMemoryMetalHandlePropertiesEXT*>(this); }
+    VkMemoryMetalHandlePropertiesEXT const* ptr() const { return reinterpret_cast<VkMemoryMetalHandlePropertiesEXT const*>(this); }
+};
+struct safe_VkMemoryGetMetalHandleInfoEXT {
+    VkStructureType sType;
+    const void* pNext{};
+    VkDeviceMemory memory;
+    VkExternalMemoryHandleTypeFlagBits handleType;
+
+    safe_VkMemoryGetMetalHandleInfoEXT(const VkMemoryGetMetalHandleInfoEXT* in_struct, PNextCopyState* copy_state = {},
+                                       bool copy_pnext = true);
+    safe_VkMemoryGetMetalHandleInfoEXT(const safe_VkMemoryGetMetalHandleInfoEXT& copy_src);
+    safe_VkMemoryGetMetalHandleInfoEXT& operator=(const safe_VkMemoryGetMetalHandleInfoEXT& copy_src);
+    safe_VkMemoryGetMetalHandleInfoEXT();
+    ~safe_VkMemoryGetMetalHandleInfoEXT();
+    void initialize(const VkMemoryGetMetalHandleInfoEXT* in_struct, PNextCopyState* copy_state = {});
+    void initialize(const safe_VkMemoryGetMetalHandleInfoEXT* copy_src, PNextCopyState* copy_state = {});
+    VkMemoryGetMetalHandleInfoEXT* ptr() { return reinterpret_cast<VkMemoryGetMetalHandleInfoEXT*>(this); }
+    VkMemoryGetMetalHandleInfoEXT const* ptr() const { return reinterpret_cast<VkMemoryGetMetalHandleInfoEXT const*>(this); }
+};
+#endif  // VK_USE_PLATFORM_METAL_EXT
 struct safe_VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT {
     VkStructureType sType;
     void* pNext{};

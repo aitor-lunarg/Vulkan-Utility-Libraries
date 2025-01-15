@@ -1016,6 +1016,11 @@ template <> inline VkStructureType GetSType<VkHdrVividDynamicMetadataHUAWEI>() {
 template <> inline VkStructureType GetSType<VkCooperativeMatrixFlexibleDimensionsPropertiesNV>() { return VK_STRUCTURE_TYPE_COOPERATIVE_MATRIX_FLEXIBLE_DIMENSIONS_PROPERTIES_NV; }
 template <> inline VkStructureType GetSType<VkPhysicalDeviceCooperativeMatrix2FeaturesNV>() { return VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_2_FEATURES_NV; }
 template <> inline VkStructureType GetSType<VkPhysicalDeviceCooperativeMatrix2PropertiesNV>() { return VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_2_PROPERTIES_NV; }
+#ifdef VK_USE_PLATFORM_METAL_EXT
+template <> inline VkStructureType GetSType<VkImportMemoryMetalHandleInfoEXT>() { return VK_STRUCTURE_TYPE_IMPORT_MEMORY_METAL_HANDLE_INFO_EXT; }
+template <> inline VkStructureType GetSType<VkMemoryMetalHandlePropertiesEXT>() { return VK_STRUCTURE_TYPE_MEMORY_METAL_HANDLE_PROPERTIES_EXT; }
+template <> inline VkStructureType GetSType<VkMemoryGetMetalHandleInfoEXT>() { return VK_STRUCTURE_TYPE_MEMORY_GET_METAL_HANDLE_INFO_EXT; }
+#endif  // VK_USE_PLATFORM_METAL_EXT
 template <> inline VkStructureType GetSType<VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT>() { return VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_ROBUSTNESS_FEATURES_EXT; }
 template <> inline VkStructureType GetSType<VkAccelerationStructureGeometryTrianglesDataKHR>() { return VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_GEOMETRY_TRIANGLES_DATA_KHR; }
 template <> inline VkStructureType GetSType<VkAccelerationStructureGeometryAabbsDataKHR>() { return VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_GEOMETRY_AABBS_DATA_KHR; }
